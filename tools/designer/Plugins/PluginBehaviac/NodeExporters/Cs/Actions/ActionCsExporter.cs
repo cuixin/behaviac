@@ -11,9 +11,6 @@
 // See the License for the specific language governing permissions and limitations under the License.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
 using Behaviac.Design;
 using Behaviac.Design.Nodes;
@@ -47,7 +44,7 @@ namespace PluginBehaviac.NodeExporters
 
         protected override bool ShouldGenerateClass(Node node)
         {
-            Action action = node as Action;
+            Behaviac.Design.Nodes.Action action = node as Behaviac.Design.Nodes.Action;
             return (action != null);
         }
 
@@ -55,7 +52,7 @@ namespace PluginBehaviac.NodeExporters
         {
             base.GenerateConstructor(node, stream, indent, className);
 
-            Action action = node as Action;
+            Behaviac.Design.Nodes.Action action = node as Behaviac.Design.Nodes.Action;
 
             if (action == null)
             {
@@ -74,7 +71,7 @@ namespace PluginBehaviac.NodeExporters
         {
             base.GenerateMember(node, stream, indent);
 
-            Action action = node as Action;
+            Behaviac.Design.Nodes.Action action = node as Behaviac.Design.Nodes.Action;
 
             if (action == null)
             {
@@ -91,7 +88,7 @@ namespace PluginBehaviac.NodeExporters
         {
             base.GenerateMethod(node, stream, indent);
 
-            Action action = node as Action;
+            Behaviac.Design.Nodes.Action action = node as Behaviac.Design.Nodes.Action;
 
             if (action == null)
             {
